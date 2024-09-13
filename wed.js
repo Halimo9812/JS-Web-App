@@ -1,5 +1,5 @@
 //import axios from "axios";
-fetch('https://api.tvmaze.com/search/shows?q=girls')
+fetch(`https://api.tvmaze.com/search/shows?q=girls`)
 
 .then(data => {
 console.log(data);
@@ -19,19 +19,40 @@ completedata.map((values)=>{
 
 
 const form = document.querySelector('#searchForm');
-form.addEventListener('submit', async function (e) {
+document.addEventListener('submit',form);
 
-    e.preventDefault();
-    const userSearch = form.elements.query.value;
-    const res = await axios.get(`https://api.tvmaze.com/search/shows?q=${userSearch}`);
+   // e.preventDefault();
+    //const userSearch = form.elements.query.value;
+    async function user(){
+    const res = await fetch(`https://api.tvmaze.com/search/shows?q=${userSearch}` )
+
+    .then(data => {
+        console.log(data);
+        return data.json();
+        }) .then((completedata) =>{
+        let data ="";
+        completedata.map((values)=>{
+        
+            data =``
+        })
+        
+            console.log(completedata);
+        
+        }) .catch((err) =>{
+           console.log(err);
+        })
 
     displayImages (res.data)
     form.elements.query.value = ""
+    };
+
+    //displayImages (res.data)
+   // form.elements.query.value = ""
 
 
     console.log("submit")//
-    console.log(form.elements.query.value)
-})
+   // console.log(form.elements.query.value)
+
 
 //document.addEventListener("DOMContentLoaded", userSearch);
 
@@ -46,3 +67,5 @@ const displayImages = (shows) => {
     }
 
 }
+
+

@@ -2,7 +2,8 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;  
-  background-color: black;
+  background-color: grey;
+
 }
 
 .heading{
@@ -12,8 +13,6 @@
     margin-bottom:1.5rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-
-
 
 .images{
     width: 80%
@@ -29,12 +28,11 @@
    text-align: center;
 }
 
-#searchForm {
+form {
     text-align: center;
-    display: flex;
-    margin-top:2.5rem;
+   }
    
-}
+
 
   
   @media (max-width: 767px) {
